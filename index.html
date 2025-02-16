@@ -113,13 +113,88 @@
             display: inline-block;
             border: 1px solid var(--glass-border);
         }
+
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            padding: 20px;
+            margin: 20px 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 var(--glass-shadow);
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(31, 38, 135, 0.05);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 16px rgba(31, 38, 135, 0.1);
+        }
+
+        .nav-button .icon {
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .nav-button {
+                padding: 10px 16px;
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>🎨 ColorInspo</h1>
     <p class="last-updated">Last Updated: February 2024</p>
 
-    <div class="section">
+    <!-- Quick Navigation -->
+    <div class="quick-nav">
+        <a href="#whats-new" class="nav-button">
+            <span class="icon">🆕</span>
+            What's New
+        </a>
+        <a href="#features" class="nav-button">
+            <span class="icon">✨</span>
+            Features
+        </a>
+        <a href="#how-to-use" class="nav-button">
+            <span class="icon">📖</span>
+            How to Use
+        </a>
+        <a href="#privacy" class="nav-button">
+            <span class="icon">🔒</span>
+            Privacy
+        </a>
+        <a href="#terms" class="nav-button">
+            <span class="icon">📜</span>
+            Terms
+        </a>
+        <a href="#version-history" class="nav-button">
+            <span class="icon">📱</span>
+            Version History
+        </a>
+    </div>
+
+    <div class="section" id="terms">
         <h2>Terms of Use</h2>
         <p>By downloading, installing, or using ColorInspo ("the App"), you agree to be bound by these Terms of Use. If you do not agree to these terms, do not use the App. The App is provided for entertainment and creative purposes only, and any use beyond this scope is at your own risk. These Terms of Use are governed by and construed in accordance with the laws of Switzerland, without regard to its conflict of law provisions.</p>
 
@@ -159,7 +234,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="privacy">
         <h2>Privacy Policy</h2>
         <p>This privacy policy is designed to inform you about how your data is handled in our App. By using the App, you acknowledge and accept that while we implement reasonable practices to protect local data, no method of data storage is 100% secure.</p>
 
@@ -218,18 +293,16 @@
         </div>
     </div>
 
-    <div class="section">
-        <h2>What's New in Version 1.2.0</h2>
-        <div class="feature">• New Custom Palette Creator - Create your own color combinations with up to 5 colors</div>
-        <div class="feature">• Image Color Extraction - Extract color palettes from your photos</div>
-        <div class="feature">• Saved Palettes - Save and organize your favorite color combinations</div>
-        <div class="feature">• Enhanced Color Modification - Improved color editing with real-time preview</div>
-        <div class="feature">• Modern Glassmorphism UI - Beautiful, modern interface with glass-like effects</div>
-        <div class="feature">• Improved Color Management - Better organization of colors and palettes</div>
-        <div class="feature">• Performance Improvements - Faster color generation and smoother animations</div>
+    <div class="section" id="whats-new">
+        <h2>What's New in Version 1.2.1</h2>
+        <div class="feature">• Improved Palette Management - Your saved palettes are now sorted by date, with newest ones at the top</div>
+        <div class="feature">• Enhanced Detail View - Beautiful overlay presentation with smooth animations</div>
+        <div class="feature">• Better Performance - Optimized animations and color generation</div>
+        <div class="feature">• What's New Feature - Stay informed about the latest improvements</div>
+        <div class="feature">• Various Bug Fixes and Improvements</div>
     </div>
 
-    <div class="section">
+    <div class="section" id="features">
         <h2>App Features</h2>
         <div class="feature">• Generate random colors with a single tap</div>
         <div class="feature">• Copy color codes in multiple formats (HEX, RGB, HSL, HSB, CMYK)</div>
@@ -242,9 +315,10 @@
         <div class="feature">• Modify colors with precise HSB and RGB controls</div>
         <div class="feature">• Color Discovery with personalized recommendations <span class="beta">BETA</span></div>
         <div class="feature">• Completely offline functionality</div>
+        <div class="feature">• Modern glassmorphism design</div>
     </div>
 
-    <div class="section">
+    <div class="section" id="how-to-use">
         <h2>How to Use ColorInspo</h2>
         
         <h3>Getting Started</h3>
@@ -325,6 +399,14 @@
         </ul>
     </div>
 
+    <div class="section" id="version-history">
+        <h2>Version History</h2>
+        <p><strong>Version 1.2.1</strong> - Improved palette management with date-based sorting, enhanced detail view with overlay presentation, better performance, and various improvements</p>
+        <p><strong>Version 1.2.0</strong> - Added custom palette creator, image color extraction, saved palettes, enhanced color modification, modern glassmorphism UI, improved color management</p>
+        <p><strong>Version 1.1</strong> - Added color modification feature with HSB/RGB controls, improved color discovery UI with glassmorphism design, enhanced analytics view, and various UI refinements</p>
+        <p><strong>Version 1.0</strong> - Initial release with core color generation features and beta machine learning capabilities</p>
+    </div>
+
     <div class="section">
         <h2>Contact Information</h2>
         <p>For support inquiries:</p>
@@ -352,12 +434,6 @@
     <div class="legal">
         <h3>Governing Law and Jurisdiction</h3>
         <p>These terms and conditions are governed by and construed in accordance with the laws of the European Union and your local jurisdiction, without regard to its conflict of law principles. You agree that any legal action or proceeding between you and the developer shall be brought exclusively in the courts located within the European Union, and you hereby accept and submit to the personal jurisdiction of these courts with respect to any legal actions, suits, or proceedings arising out of these terms or your use of the App.</p>
-    </div>
-
-    <div class="section">
-        <h2>Version History</h2>
-        <p><strong>Version 1.1</strong> - Added color modification feature with HSB/RGB controls, improved color discovery UI with glassmorphism design, enhanced analytics view, and various UI refinements</p>
-        <p><strong>Version 1.0</strong> - Initial release with core color generation features and beta machine learning capabilities</p>
     </div>
 </body>
 </html> 
